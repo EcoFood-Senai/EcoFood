@@ -5,7 +5,7 @@ import { useToast } from '../context/ToastContext'
 import './Header.css'
 
 export function Header() {
-  const { user, logout } = useAuth()
+  const { logout } = useAuth()
   const { notify } = useToast()
   const navigate = useNavigate()
 
@@ -27,7 +27,6 @@ export function Header() {
           <Plus size={18} />
           <span className="header__cta-label">Novo alimento</span>
         </Link>
-        <span className="header__user">{user?.name}</span>
         <button type="button" className="header__logout" aria-label="Sair" onClick={handleLogout}>
           <LogOut size={20} />
         </button>
