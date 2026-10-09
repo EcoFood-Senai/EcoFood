@@ -4,35 +4,56 @@
   z-index: 50;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
   height: var(--header-height);
-  padding: 0 24px;
-  background: var(--green-900);
-  box-shadow: var(--shadow);
+  padding: 0 max(24px, calc((100vw - var(--content-width)) / 2 + 24px));
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .header__logo {
-  margin-right: auto;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.header__name {
   font-family: var(--font-title);
   font-size: 1.8rem;
-  letter-spacing: 1px;
-  color: var(--white);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text);
 }
 
-.header__menu {
-  display: none;
-  font-size: 1.6rem;
-  line-height: 1;
-  color: var(--white);
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header__user {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.header__logout {
+  display: flex;
+  padding: 8px;
+  color: var(--text-muted);
   background: none;
-  border: none;
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 
-.header__cta {
-  background: var(--green-500);
-  color: var(--green-900);
-}
-
-.header__cta:hover {
-  background: var(--green-100);
+.header__logout:hover {
+  color: var(--text);
+  background: var(--surface);
 }

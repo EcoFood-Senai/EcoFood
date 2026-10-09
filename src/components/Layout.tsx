@@ -1,19 +1,24 @@
-import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
+import { FoodsProvider } from '../context/FoodsContext'
+import { ExpiryAlert } from './ExpiryAlert'
 import { Header } from './Header'
-import { Sidebar } from './Sidebar'
+import { NavBar } from './NavBar'
 import './Layout.css'
 
+/** Área autenticada: redireciona para o login quando não há sessão. */
 export function Layout() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const { user } = useAuth()
+  if (!user) return <Navigate to="/login" replace />
 
   return (
-    <>
-      <Header onToggleMenu={() => setMenuOpen((open) => !open)} />
-      <Sidebar open={menuOpen} onNavigate={() => setMenuOpen(false)} />
+    <FoodsProvider key={user.id} userId={user.id}>
+      <Header />
+      <NavBar />
       <main className="layout__main">
         <Outlet />
       </main>
-    </>
+      <ExpiryAlert />
+    </FoodsProvider>
   )
 }
