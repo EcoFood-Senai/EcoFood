@@ -1,0 +1,28 @@
+.status-badge {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-badge--ok {
+  background: var(--green-100);
+  color: var(--green-900);
+}
+
+.status-badge--atencao {
+  background: var(--yellow-100);
+  color: var(--yellow-700);
+}
+
+.status-badge--vence-hoje {
+  background: var(--orange-100);
+  color: #9a3412;
+}
+
+.status-badge--vencido {
+  background: var(--red-100);
+  color: #991b1b;
+}
