@@ -1,0 +1,59 @@
+.icon-input {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.icon-input__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.icon-input__field {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+  height: 56px;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  transition: border-color 0.15s;
+}
+
+.icon-input__field:focus-within {
+  border-color: var(--primary);
+}
+
+.icon-input__field--error {
+  border-color: var(--danger);
+}
+
+.icon-input__field input {
+  flex: 1;
+  min-width: 0;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.icon-input__toggle {
+  display: flex;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+}
+
+.icon-input__toggle:hover {
+  color: var(--text);
+}
+
+.icon-input__error {
+  font-size: 0.8rem;
+  color: var(--danger);
+}
