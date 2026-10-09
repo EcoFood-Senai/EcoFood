@@ -11,30 +11,36 @@
   flex-wrap: wrap;
   gap: 8px 16px;
   padding: 14px 20px;
-  background: var(--white);
-  border-left: 5px solid var(--green-500);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  background: aar(--surface);
+  border-left: 5px solid aar(--primary);
+  border-radius: aar(--radius);
+  box-shadow: aar(--shadow);
 }
 
 .history__item--descartado,
 .history__item--excluido {
-  border-left-color: var(--red-600);
+  border-left-color: aar(--danger);
 }
 
 .history__item--editado {
-  border-left-color: #eab308;
+  border-left-color: eeab308;
 }
 
 .history__action {
   min-width: 130px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--gray-600);
+  color: aar(--text-muted);
 }
 
 .history__item time {
   margin-left: auto;
   font-size: 0.8rem;
-  color: var(--gray-600);
+  color: aar(--text-muted);
+}
+
+.history__action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

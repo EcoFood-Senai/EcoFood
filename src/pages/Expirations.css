@@ -11,8 +11,8 @@
   justify-content: space-between;
   gap: 12px;
   padding: 16px 20px;
-  color: var(--gray-900);
-  background: var(--white);
+  color: var(--text);
+  background: var(--surface);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
@@ -24,5 +24,5 @@
 
 .expirations__item span {
   font-size: 0.85rem;
-  color: var(--gray-600);
+  color: var(--text-muted);
 }

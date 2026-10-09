@@ -8,21 +8,21 @@
 }
 
 .status-badge--ok {
-  background: var(--green-100);
-  color: var(--green-900);
+  background: var(--primary-soft);
+  color: var(--primary);
 }
 
 .status-badge--atencao {
-  background: var(--yellow-100);
-  color: var(--yellow-700);
+  background: var(--warning-soft);
+  color: var(--warning);
 }
 
 .status-badge--vence-hoje {
-  background: var(--orange-100);
-  color: #9a3412;
+  background: var(--orange-soft);
+  color: var(--orange);
 }
 
 .status-badge--vencido {
-  background: var(--red-100);
-  color: #991b1b;
+  background: var(--danger-soft);
+  color: var(--danger);
 }

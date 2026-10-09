@@ -10,18 +10,18 @@
   gap: 2px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--gray-600);
+  color: var(--text-muted);
 }
 
 .filter-bar select {
   min-width: 170px;
   padding: 8px 12px;
-  background: var(--white);
-  border: 2px solid var(--gray-300);
+  background: var(--surface);
+  border: 2px solid var(--border);
   border-radius: 10px;
 }
 
 .filter-bar select:focus {
   outline: none;
-  border-color: var(--green-500);
+  border-color: var(--primary);
 }

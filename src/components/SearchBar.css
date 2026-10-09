@@ -5,13 +5,13 @@
   flex: 1;
   min-width: 220px;
   padding: 10px 16px;
-  background: var(--white);
-  border: 2px solid var(--gray-300);
+  background: var(--surface);
+  border: 2px solid var(--border);
   border-radius: 999px;
 }
 
 .search-bar:focus-within {
-  border-color: var(--green-500);
+  border-color: var(--primary);
 }
 
 .search-bar input {
