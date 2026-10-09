@@ -6,7 +6,7 @@ Aplicação web para controle de alimentos e acompanhamento de datas de validade
 
 | Recurso | Endereço |
 | --- | --- |
-| Aplicação publicada (Vercel) | https://eco-food-senai.vercel.app/login |
+| Aplicação publicada (Vercel) | https://eco-food-senai.vercel.app/ |
 | Repositório | https://github.com/EcoFood-Senai/EcoFood |
 | Quadro do projeto (GitHub Projects) | https://github.com/orgs/EcoFood-Senai/projects/2 |
 
