@@ -17,12 +17,17 @@ export const CATEGORIES: FoodCategory[] = [
   'Outros',
 ]
 
+export type StorageLocation = 'Geladeira' | 'Freezer' | 'Dispensa'
+
+export const LOCATIONS: StorageLocation[] = ['Geladeira', 'Freezer', 'Dispensa']
+
 export type FoodState = 'ativo' | 'consumido' | 'descartado'
 
 export interface Food {
   id: string
   name: string
   category: FoodCategory
+  location: StorageLocation
   quantity: number
   unit: string
   expiryDate: string

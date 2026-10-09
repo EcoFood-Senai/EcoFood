@@ -1,17 +1,40 @@
-import { CATEGORIES } from '../types/food'
-import type { FoodCategory, ValidityStatus } from '../types/food'
+import { CATEGORIES, LOCATIONS } from '../types/food'
+import type { FoodCategory, StorageLocation, ValidityStatus } from '../types/food'
 import './FilterBar.css'
 
 interface FilterBarProps {
   category: FoodCategory | 'todas'
+  location: StorageLocation | 'todos'
   status: ValidityStatus | 'todos'
   onCategoryChange: (category: FoodCategory | 'todas') => void
+  onLocationChange: (location: StorageLocation | 'todos') => void
   onStatusChange: (status: ValidityStatus | 'todos') => void
 }
 
-export function FilterBar({ category, status, onCategoryChange, onStatusChange }: FilterBarProps) {
+export function FilterBar({
+  category,
+  location,
+  status,
+  onCategoryChange,
+  onLocationChange,
+  onStatusChange,
+}: FilterBarProps) {
   return (
     <div className="filter-bar">
+      <label>
+        Local
+        <select
+          value={location}
+          onChange={(event) => onLocationChange(event.target.value as StorageLocation | 'todos')}
+        >
+          <option value="todos">Todos</option>
+          {LOCATIONS.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+      </label>
       <label>
         Categoria
         <select
