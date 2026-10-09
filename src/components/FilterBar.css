@@ -1,5 +1,6 @@
 .filter-bar {
   display: flex;
+  max-width: 100%;
   flex-wrap: wrap;
   gap: 16px;
 }
