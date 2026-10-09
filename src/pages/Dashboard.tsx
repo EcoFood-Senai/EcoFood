@@ -2,17 +2,17 @@ import { Link } from 'react-router-dom'
 import { FoodCard } from '../components/FoodCard'
 import { StatisticCard } from '../components/StatisticCard'
 import { useFoods } from '../context/FoodsContext'
+import { LOCATIONS } from '../types/food'
 import { daysUntil, getValidityStatus } from '../utils/date'
 
 export function Dashboard() {
   const { foods } = useFoods()
   const active = foods.filter((food) => food.state === 'ativo')
 
-  const withStatus = active.map((food) => ({
-    food,
-    days: daysUntil(food.expiryDate),
-    status: getValidityStatus(daysUntil(food.expiryDate)),
-  }))
+  const withStatus = active.map((food) => {
+    const days = daysUntil(food.expiryDate)
+    return { food, days, status: getValidityStatus(days) }
+  })
 
   const expired = withStatus.filter((item) => item.status === 'vencido').length
   const warning = withStatus.filter(
@@ -36,6 +36,20 @@ export function Dashboard() {
         <StatisticCard label="No prazo" value={ok} tone="green" />
         <StatisticCard label="Perto de vencer" value={warning} hint="Até 3 dias" tone="yellow" />
         <StatisticCard label="Vencidos" value={expired} tone="red" />
+      </section>
+
+      <section className="page">
+        <h2>Por local</h2>
+        <div className="grid">
+          {LOCATIONS.map((location) => (
+            <StatisticCard
+              key={location}
+              label={location}
+              value={active.filter((food) => food.location === location).length}
+              tone="gray"
+            />
+          ))}
+        </div>
       </section>
 
       <section className="page">

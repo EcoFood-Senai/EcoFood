@@ -1,33 +1,34 @@
+import { ArrowRightLeft, Apple, CalendarDays, Leaf, ShoppingCart, Snowflake } from 'lucide-react'
 import './Tips.css'
 
 const TIPS = [
   {
-    icon: '🧊',
+    icon: Snowflake,
     title: 'Congele o que não vai consumir',
     text: 'Pães, carnes e frutas maduras duram meses no freezer. Congele antes de vencer.',
   },
   {
-    icon: '📥',
+    icon: ArrowRightLeft,
     title: 'Primeiro que entra, primeiro que sai',
     text: 'Coloque os alimentos mais novos atrás e os mais antigos na frente da geladeira.',
   },
   {
-    icon: '🛒',
+    icon: ShoppingCart,
     title: 'Compre só o necessário',
     text: 'Faça uma lista de compras com base no que você já tem cadastrado no EcoFood.',
   },
   {
-    icon: '🍌',
+    icon: Apple,
     title: 'Aproveite frutas maduras',
     text: 'Bananas e maçãs muito maduras viram bolos, vitaminas e geleias.',
   },
   {
-    icon: '🥬',
+    icon: Leaf,
     title: 'Guarde verduras do jeito certo',
     text: 'Lave, seque bem e guarde em potes com papel toalha para durarem mais.',
   },
   {
-    icon: '📅',
+    icon: CalendarDays,
     title: 'Entenda as datas',
     text: '“Consumir até” exige atenção à segurança; “melhor antes de” indica qualidade.',
   },
@@ -44,11 +45,13 @@ export function Tips() {
       </div>
 
       <div className="grid">
-        {TIPS.map((tip) => (
-          <article key={tip.title} className="tip">
-            <span aria-hidden="true">{tip.icon}</span>
-            <h3>{tip.title}</h3>
-            <p>{tip.text}</p>
+        {TIPS.map(({ icon: Icon, title, text }) => (
+          <article key={title} className="tip">
+            <span className="tip__icon">
+              <Icon size={24} />
+            </span>
+            <h3>{title}</h3>
+            <p>{text}</p>
           </article>
         ))}
       </div>

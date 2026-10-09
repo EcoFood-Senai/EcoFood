@@ -1,3 +1,4 @@
+import { Search } from 'lucide-react'
 import './SearchBar.css'
 
 interface SearchBarProps {
@@ -9,7 +10,7 @@ interface SearchBarProps {
 export function SearchBar({ value, onChange, placeholder = 'Buscar alimento...' }: SearchBarProps) {
   return (
     <label className="search-bar">
-      <span aria-hidden="true">🔍</span>
+      <Search size={18} />
       <input
         type="search"
         value={value}

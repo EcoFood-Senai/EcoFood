@@ -1,10 +1,12 @@
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { FoodForm } from '../components/FoodForm'
 import { useFoods } from '../context/FoodsContext'
+import { useToast } from '../context/ToastContext'
 
 export function EditFood() {
   const { id = '' } = useParams()
   const { getFood, updateFood } = useFoods()
+  const { notify } = useToast()
   const navigate = useNavigate()
   const food = getFood(id)
 
@@ -30,6 +32,7 @@ export function EditFood() {
         onCancel={() => navigate(`/alimentos/${food.id}`)}
         onSubmit={(input) => {
           updateFood(food.id, input)
+          notify('success', `${input.name} atualizado com sucesso.`)
           navigate(`/alimentos/${food.id}`)
         }}
       />
