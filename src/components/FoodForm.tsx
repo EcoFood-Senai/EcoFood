@@ -4,27 +4,18 @@ import { CATEGORIES } from '../types/food'
 import type { FoodCategory } from '../types/food'
 import type { FoodInput } from '../context/FoodsContext'
 import { todayISO } from '../utils/date'
+import { validateFood } from '../utils/validation'
+import type { FoodErrors } from '../utils/validation'
 import './FoodForm.css'
 
 const UNITS = ['un', 'kg', 'g', 'L', 'ml', 'pacote']
 
-type Errors = Partial<Record<'name' | 'quantity' | 'expiryDate', string>>
 
 interface FoodFormProps {
   initial?: FoodInput
   submitLabel: string
   onSubmit: (input: FoodInput) => void
   onCancel: () => void
-}
-
-export function validateFood(input: FoodInput): Errors {
-  const errors: Errors = {}
-  if (input.name.trim().length < 2) errors.name = 'Informe o nome do alimento (mín. 2 letras).'
-  if (!Number.isFinite(input.quantity) || input.quantity <= 0) {
-    errors.quantity = 'A quantidade deve ser maior que zero.'
-  }
-  if (!input.expiryDate) errors.expiryDate = 'Informe a data de validade.'
-  return errors
 }
 
 export function FoodForm({ initial, submitLabel, onSubmit, onCancel }: FoodFormProps) {
@@ -34,7 +25,7 @@ export function FoodForm({ initial, submitLabel, onSubmit, onCancel }: FoodFormP
   const [unit, setUnit] = useState(initial?.unit ?? 'un')
   const [expiryDate, setExpiryDate] = useState(initial?.expiryDate ?? todayISO())
   const [notes, setNotes] = useState(initial?.notes ?? '')
-  const [errors, setErrors] = useState<Errors>({})
+  const [errors, setErrors] = useState<FoodErrors>({})
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault()
