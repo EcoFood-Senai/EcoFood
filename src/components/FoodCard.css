@@ -1,0 +1,49 @@
+.food-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+  color: var(--gray-900);
+  background: var(--white);
+  border-top: 6px solid var(--green-500);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.food-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(20, 83, 45, 0.18);
+}
+
+.food-card--atencao {
+  border-top-color: #eab308;
+}
+
+.food-card--vence-hoje {
+  border-top-color: var(--orange-500);
+}
+
+.food-card--vencido {
+  border-top-color: var(--red-600);
+}
+
+.food-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.food-card__icon {
+  font-size: 2rem;
+}
+
+.food-card__name {
+  margin-top: 6px;
+}
+
+.food-card__meta,
+.food-card__date {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+}
