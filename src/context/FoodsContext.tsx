@@ -2,9 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import type { ReactNode } from 'react'
 import type { Food, HistoryAction, HistoryEntry } from '../types/food'
 import { loadFromStorage, saveToStorage } from '../utils/storage'
-
-const FOODS_KEY = 'ecofood:foods'
-const HISTORY_KEY = 'ecofood:history'
+import { foodsKey, historyKey } from '../utils/storageKeys'
 
 export type FoodInput = Omit<Food, 'id' | 'createdAt' | 'state'>
 
@@ -24,14 +22,14 @@ function newId(): string {
   return crypto.randomUUID()
 }
 
-export function FoodsProvider({ children }: { children: ReactNode }) {
-  const [foods, setFoods] = useState<Food[]>(() => loadFromStorage<Food[]>(FOODS_KEY, []))
+export function FoodsProvider({ userId, children }: { userId: string; children: ReactNode }) {
+  const [foods, setFoods] = useState<Food[]>(() => loadFromStorage<Food[]>(foodsKey(userId), []))
   const [history, setHistory] = useState<HistoryEntry[]>(() =>
-    loadFromStorage<HistoryEntry[]>(HISTORY_KEY, []),
+    loadFromStorage<HistoryEntry[]>(historyKey(userId), []),
   )
 
-  useEffect(() => saveToStorage(FOODS_KEY, foods), [foods])
-  useEffect(() => saveToStorage(HISTORY_KEY, history), [history])
+  useEffect(() => saveToStorage(foodsKey(userId), foods), [userId, foods])
+  useEffect(() => saveToStorage(historyKey(userId), history), [userId, history])
 
   const log = useCallback((foodName: string, action: HistoryAction) => {
     const entry: HistoryEntry = {
