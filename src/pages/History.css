@@ -1,0 +1,40 @@
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+
+.history__item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 14px 20px;
+  background: var(--white);
+  border-left: 5px solid var(--green-500);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.history__item--descartado,
+.history__item--excluido {
+  border-left-color: var(--red-600);
+}
+
+.history__item--editado {
+  border-left-color: #eab308;
+}
+
+.history__action {
+  min-width: 130px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-600);
+}
+
+.history__item time {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--gray-600);
+}
