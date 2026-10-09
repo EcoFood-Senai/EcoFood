@@ -1,0 +1,5 @@
+.layout__main {
+  min-height: calc(100vh - var(--header-height));
+  margin-left: var(--sidebar-width);
+  padding: 32px;
+}
