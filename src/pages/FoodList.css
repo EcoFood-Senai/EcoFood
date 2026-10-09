@@ -1,0 +1,10 @@
+.food-list__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.food-list__sample {
+  margin-top: 12px;
+}
