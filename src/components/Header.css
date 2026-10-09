@@ -1,0 +1,38 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: var(--header-height);
+  padding: 0 24px;
+  background: var(--green-900);
+  box-shadow: var(--shadow);
+}
+
+.header__logo {
+  margin-right: auto;
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.header__menu {
+  display: none;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--white);
+  background: none;
+  border: none;
+}
+
+.header__cta {
+  background: var(--green-500);
+  color: var(--green-900);
+}
+
+.header__cta:hover {
+  background: var(--green-100);
+}
