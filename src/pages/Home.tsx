@@ -6,23 +6,23 @@ const FEATURES = [
   {
     icon: Package,
     title: 'Organize',
-    text: 'Cadastre seus alimentos com categoria, quantidade, validade e local: geladeira, freezer ou dispensa.',
+    text: 'Cadastre alimentos por categoria, validade e local de armazenamento.',
   },
   {
     icon: CalendarClock,
     title: 'Acompanhe',
-    text: 'Veja o que está perto de vencer e priorize o que consumir primeiro.',
+    text: 'Veja o que está perto de vencer e consuma primeiro.',
   },
   {
     icon: Leaf,
     title: 'Reduza',
-    text: 'Acompanhe estatísticas e descubra o quanto você evitou de desperdício.',
+    text: 'Acompanhe estatísticas e evite o desperdício.',
   },
 ]
 
 export function Home() {
   return (
-    <div className="page">
+    <div className="page home">
       <section className="hero">
         <div className="hero__content">
           <span className="hero__tag">ODS 12 · Consumo e produção responsáveis</span>
@@ -53,8 +53,10 @@ export function Home() {
             <span className="home-feature__icon">
               <Icon size={26} />
             </span>
-            <h3>{title}</h3>
-            <p>{text}</p>
+            <div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </div>
           </article>
         ))}
       </section>

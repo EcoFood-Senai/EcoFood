@@ -1,9 +1,18 @@
+.home {
+  justify-content: center;
+  min-height: calc(100dvh - var(--header-height) - var(--nav-height) - 58px);
+}
+
+.home .grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  padding: 56px 48px;
+  padding: 32px 44px;
   background: linear-gradient(135deg, #14341f 0%, var(--surface) 70%);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -18,7 +27,7 @@
 }
 
 .hero h1 {
-  font-size: 3.6rem;
+  font-size: 2.7rem;
 }
 
 .hero p {
@@ -46,17 +55,18 @@
 }
 
 .hero__logo {
-  width: 240px;
-  height: 240px;
+  width: 170px;
+  height: 170px;
+  flex-shrink: 0;
   object-fit: contain;
   border-radius: 32px;
 }
 
 .home-feature {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 24px;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -64,7 +74,7 @@
 
 .home-feature__icon {
   display: flex;
-  align-self: flex-start;
+  align-self: center;
   padding: 12px;
   color: var(--primary);
   background: var(--primary-soft);
