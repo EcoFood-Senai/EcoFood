@@ -1,0 +1,52 @@
+.food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 560px;
+  padding: 28px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.food-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.food-form input,
+.food-form select,
+.food-form textarea {
+  padding: 10px 14px;
+  font-weight: 400;
+  border: 2px solid var(--gray-300);
+  border-radius: 10px;
+}
+
+.food-form input:focus,
+.food-form select:focus,
+.food-form textarea:focus {
+  outline: none;
+  border-color: var(--green-500);
+}
+
+.food-form__row {
+  display: flex;
+  gap: 16px;
+}
+
+.food-form__error {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--red-600);
+}
+
+.food-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
